@@ -1,0 +1,11 @@
+
+digraph DER {
+  graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.5", ranksep="0.8"];
+  node [shape=record, style="rounded,filled", fontname="Arial", fontsize=10, color="#526579"];
+  edge [fontname="Arial", fontsize=10, color="#526579"];
+  produtos [label="{PRODUTOS|PK id_produto\\lnome\\lcategoria\\lunidade_medida\\lquantidade\\lvalor_unitario\\l}", fillcolor="#E5EEF9"];
+  entradas [label="{ENTRADAS|PK id_entrada\\lFK id_produto\\ldata_entrada\\lquantidade\\lvalor_unitario\\l}", fillcolor="#E3F3E8"];
+  saidas [label="{SAIDAS|PK id_saida\\lFK id_produto\\ldata_saida\\lquantidade\\lvalor_unitario\\l}", fillcolor="#FBE9E7"];
+  produtos -> entradas [label="1 : N"];
+  produtos -> saidas [label="1 : N"];
+}
